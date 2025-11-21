@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Student;
 use Illuminate\Database\Seeder;
+use Database\Seeders\TodolistSeeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -25,11 +26,15 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        Student::create([
-            'name' => 'mirza',
-            'username' => 'mirzaq123',
-            'email' => 'mirza@gmail.com',
-            'password' => Hash::make('mirza12345'),
+        // Student::create([
+        //     'name' => 'mirza',
+        //     'username' => 'mirzaq123',
+        //     'email' => 'mirza@gmail.com',
+        //     'password' => Hash::make('mirza12345'),
+        // ]);
+
+        $this->call([
+            TodolistSeeder::class
         ]);
     }
 }

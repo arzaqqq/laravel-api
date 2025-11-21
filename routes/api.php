@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PersonController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Api\StudentController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Api\TodolistController;
 use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/user', function (Request $request) {
@@ -20,3 +21,6 @@ Route::post('/logout',LogoutController::class)->middleware('auth:sanctum');
 Route::resource('/person',PersonController::class);
 
 Route::resource('/students',StudentController::class);
+
+
+Route::apiResource('/todolist', TodolistController::class)->middleware('auth:sanctum');
